@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Tacos and Burritos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div>
+    <img [alt]="image.alt" [src]="image.src" />
+    <!-- 
+      To change the src of an image, wrap it in [ ] square brackets, and set it equal to a variable in 
+      the typescript file that contains its src.
+
+      In this case, the image object has a property called 'src' that stores assets/taco.jpg in it
+
+      The ion-segment below changes the image object's properties to the appropriate food (taco or burrito)
+     -->
+  </div>
+
+  <ion-segment (ionChange)="selectedFood($event)">
+    <ion-segment-button checked value="taco">
+      Taco
+    </ion-segment-button>
+    <ion-segment-button value="burrito">
+      Burrito
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-content>
